@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Mail, CheckCircle } from 'lucide-react';
 import { toast } from "@/components/ui/use-toast";
+import emailjs from 'emailjs-com';
 
 const ContactInfo = () => {
   return (
@@ -73,36 +74,41 @@ const Contact = () => {
     setFormStatus('submitting');
     
     try {
-      // Make a POST request to your backend API endpoint
-      const response = await fetch('/api/submitForm', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Use EmailJS to send the email
+      const result = await emailjs.send(
+        'service_h0twwfi',   // Your EmailJS service ID
+        'template_qy410i3',  // Your EmailJS template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },            // Form data
+        'XoTjpfU7WtoE1HVBb'       // Your EmailJS user ID
+      );
 
-      if (!response.ok) {
-        throw new Error('There was a problem submitting the form');
+      if (result.text === 'OK') {
+        setFormStatus('success');
+        toast({
+          title: "Form submitted successfully!",
+          description: "We'll get back to you shortly.",
+        });
+
+        // Clear form data after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+
+        // Reset form status after a few seconds
+        setTimeout(() => setFormStatus('idle'), 3000);
+      } else {
+        throw new Error('There was an issue submitting the form');
       }
-
-      setFormStatus('success');
-      toast({
-        title: "Form submitted successfully!",
-        description: "We'll get back to you shortly.",
-      });
-
-      // Clear form data after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-
-      // Reset form status after a few seconds
-      setTimeout(() => setFormStatus('idle'), 3000);
     } catch (error) {
       setFormStatus('error');
       toast({
