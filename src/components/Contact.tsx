@@ -36,7 +36,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-medium text-gold mb-1">Email Address</h4>
-            <p className="text-gray-300 break-words max-w-full">info@renewablepowersolutions.co.nz</p>
+            <p className="text-gray-300 break-words max-w-full text-sm">info@renewablepowersolutions.co.nz</p>
           </div>
         </div>
       </div>
