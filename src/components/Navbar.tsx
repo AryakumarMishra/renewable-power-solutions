@@ -49,9 +49,9 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white bg-opacity-90 backdrop-blur-md shadow-md py-2' 
-          : 'bg-transparent py-4'
+        scrolled
+          ? 'bg-gray-950 bg-opacity-90 backdrop-blur-md shadow-md py-2'  // Lighten on scroll
+          : 'bg-transparent py-4'  // Dark background when not scrolled
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +85,7 @@ const Navbar = () => {
                   scrollToSection(link.href);
                 }}
                 className={`font-medium transition-colors duration-300 sliding-underline ${
-                  scrolled ? 'text-gray-800' : 'text-gray-100'
+                  scrolled ? 'text-gray-100' : 'text-gray-300'  // Light text on scroll
                 }`}
               >
                 {link.text}
@@ -108,7 +108,7 @@ const Navbar = () => {
             <button 
               onClick={toggleMenu} 
               className={`p-2 rounded-md ${
-                scrolled ? 'text-gray-900' : 'text-white'
+                scrolled ? 'text-white' : 'text-white'
               }`}
             >
               {isOpen ? (
@@ -154,6 +154,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+
   );
 };
 

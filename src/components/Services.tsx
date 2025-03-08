@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Sun, Battery, Home, Lightbulb, Shield, LucideIcon, ArrowRight, Zap, Thermometer, Factory, CloudLightning, Wrench } from 'lucide-react';
+import { Sun, Battery, Home, Lightbulb, Shield, LucideIcon, ArrowRight, Zap, Thermometer, Factory, CloudLightning, Wrench, Cpu, Fan, Camera } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -11,7 +11,7 @@ interface ServiceCardProps {
 const ServiceCard = ({ icon: Icon, title, description, delay = 0 }: ServiceCardProps) => {
   return (
     <div 
-      className="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 animate-on-scroll relative overflow-hidden group"
+      className="bg-black p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-800 animate-on-scroll relative overflow-hidden group"
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="absolute -right-12 -top-12 w-24 h-24 bg-gold/10 rounded-full transition-all duration-300 group-hover:scale-150"></div>
@@ -19,8 +19,8 @@ const ServiceCard = ({ icon: Icon, title, description, delay = 0 }: ServiceCardP
         <div className="p-3 bg-gold/10 rounded-lg inline-block mb-4">
           <Icon className="h-6 w-6 text-gold" />
         </div>
-        <h3 className="text-xl font-bold font-playfair mb-3">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <h3 className="text-xl font-bold font-playfair mb-3 text-white">{title}</h3>
+        <p className="text-gray-400 mb-4">{description}</p>
         <a href="#contact" className="inline-flex items-center text-gold group-hover:underline font-medium">
           Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </a>
@@ -65,12 +65,12 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="section py-24 bg-gray-50" ref={sectionRef}>
+    <section id="services" className="section py-24 bg-black" ref={sectionRef}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto animate-on-scroll">
           <span className="text-sm bg-gold/10 text-gold px-3 py-1 rounded-full font-medium">Our Services</span>
-          <h2 className="section-title mt-4">Comprehensive <span className="text-gold">Electrical & Solar</span> Solutions</h2>
-          <p className="section-subtitle text-gray-600">
+          <h2 className="section-title mt-4 text-white">Comprehensive <span className="text-gold">Electrical & Solar</span> Solutions</h2>
+          <p className="section-subtitle text-gray-400">
             Renewable Power Solutions offers a complete range of electrical and renewable energy services for residential and commercial properties, helping you transition to cleaner, more efficient power.
           </p>
         </div>
@@ -135,6 +135,26 @@ const Services = () => {
             icon={Shield} 
             title="Compliance & Safety" 
             description="Thorough electrical safety inspections, compliance checks, and certification for residential and commercial properties to ensure your systems meet all regulations."
+            delay={800}
+          />
+          
+          {/* New Services */}
+          <ServiceCard 
+            icon={Cpu} 
+            title="EV Charger Installation" 
+            description="Professional installation of electric vehicle charging stations for residential and commercial properties, making sustainable transportation convenient and accessible."
+            delay={600}
+          />
+          <ServiceCard 
+            icon={Fan} 
+            title="Ventilation Systems" 
+            description="High-efficiency ventilation solutions that improve indoor air quality, reduce humidity, and create healthier living and working environments for your property."
+            delay={700}
+          />
+          <ServiceCard 
+            icon={Camera} 
+            title="Security Cameras" 
+            description="State-of-the-art security camera systems with professional installation, monitoring options, and integration with your existing electrical infrastructure."
             delay={800}
           />
         </div>

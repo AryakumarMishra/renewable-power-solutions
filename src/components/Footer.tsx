@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 
@@ -20,13 +19,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-gray-950/80 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8">
           <div>
             <div className="mb-6">
               <img 
-                src="/images/logo.png" 
+                src="/images/logo-enlarged-removebg.png" 
                 alt="Renewable Power Solutions Logo" 
                 className="h-16"
               />
@@ -73,7 +72,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
             <ul className="space-y-2">
-              {[
+              {[ 
                 "Solar Energy Solutions",
                 "Energy Storage Systems",
                 "Heat Pump Systems",
@@ -82,7 +81,10 @@ const Footer = () => {
                 "Electrical Protection",
                 "Maintenance & Repairs",
                 "Energy Efficiency",
-                "Compliance & Safety"
+                "Compliance & Safety",
+                "EV Charging Solutions",
+                "Ventilation Systems",
+                "Security Cameras",
               ].map((service, index) => (
                 <li key={index}>
                   <a 
@@ -105,19 +107,19 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-gold mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">123 Solar Avenue, Greencity, GC 12345</span>
+                <span className="text-gray-400">46 Brookfield Street, Hamilton East, Hamilton 3216 New Zealand</span>
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-gold mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-400">+64 221970971</span>
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-gold mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">info@renewablepowersolutions.com</span>
+                <span className="text-gray-400">info@renewablepowersolutions.co.nz</span>
               </li>
             </ul>
             
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <h5 className="font-medium mb-3">Newsletter</h5>
               <div className="flex">
                 <input 
@@ -129,7 +131,7 @@ const Footer = () => {
                   <ArrowRight className="h-5 w-5" />
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         

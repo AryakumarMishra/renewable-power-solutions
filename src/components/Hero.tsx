@@ -49,7 +49,7 @@ const Hero = () => {
     <section id="home" className="relative" ref={heroRef}>
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gray-900/80 z-10"></div>
+        <div className="absolute inset-0 bg-gray-950/80 z-10"></div>
         <div 
           className="absolute inset-0 z-0" 
           style={{ 
