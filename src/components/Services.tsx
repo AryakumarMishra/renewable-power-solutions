@@ -141,8 +141,8 @@ const Services = () => {
           {/* New Services */}
           <ServiceCard 
             icon={Cpu} 
-            title="EV Charger Installation" 
-            description="Professional installation of electric vehicle charging stations for residential and commercial properties, making sustainable transportation convenient and accessible."
+            title="EV Charging Solutions" 
+            description="Professional Electric Vehicle charging solutions for residential and commercial properties, providing comprehensive and accessible options to support sustainable transportation, making electric vehicle charging convenient and reliable."
             delay={600}
           />
           <ServiceCard 
