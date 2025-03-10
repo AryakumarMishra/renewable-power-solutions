@@ -115,7 +115,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-gold mr-3 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">info@renewablepowersolutions.co.nz</span>
+                <span className="text-gray-400 text-sm">info@renewablepowersolutions.co.nz</span>
               </li>
             </ul>
             
@@ -140,11 +140,6 @@ const Footer = () => {
             <p className="text-gray-500 text-sm">
               © {currentYear} Renewable Power Solutions. All rights reserved.
             </p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-gold text-sm transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-gold text-sm transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="text-gray-500 hover:text-gold text-sm transition-colors duration-300">Sitemap</a>
-            </div>
           </div>
         </div>
       </div>

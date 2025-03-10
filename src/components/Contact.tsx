@@ -76,8 +76,8 @@ const Contact = () => {
     try {
       // Use EmailJS to send the email
       const result = await emailjs.send(
-        'service_h0twwfi',   // Your EmailJS service ID
-        'template_qy410i3',  // Your EmailJS template ID
+        'service_vu0x40t',   // EmailJS service ID
+        'template_jopymvl',  // EmailJS template ID
         {
           name: formData.name,
           email: formData.email,
@@ -85,7 +85,7 @@ const Contact = () => {
           service: formData.service,
           message: formData.message,
         },            // Form data
-        'XoTjpfU7WtoE1HVBb'       // Your EmailJS user ID
+        '2o_0Z3ZdnGH0odSvb'       //EmailJS user ID
       );
 
       if (result.text === 'OK') {
@@ -114,7 +114,7 @@ const Contact = () => {
       toast({
         title: "Error submitting the form",
         description: "There was an issue with the submission. Please try again.",
-        variant: 'destructive', // A toast variant for errors
+        variant: 'destructive',
       });
     }
   };
@@ -223,15 +223,18 @@ const Contact = () => {
                       className="w-full px-4 py-2 bg-gray-900 text-white border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all duration-300"
                     >
                       <option value="">Select a service</option>
-                      <option value="solar">Solar Energy Solutions</option>
-                      <option value="battery">Energy Storage Systems</option>
-                      <option value="residential">Heat Pump Systems</option>
-                      <option value="commercial">Residential Electrical</option>
-                      <option value="maintenance">Commercial Electrical</option>
-                      <option value="audit">Electrical Protection</option>
-                      <option value="audit">Maintenance & Repairs</option>
-                      <option value="audit">Energy Efficiency</option>
-                      <option value="audit">Compliance & Safety</option>
+                      <option value="Solar Energy Solutions">Solar Energy Solutions</option>
+                      <option value="Energy Storage Systems">Energy Storage Systems</option>
+                      <option value="Heat Pump Systems">Heat Pump Systems</option>
+                      <option value="Residential Electrical">Residential Electrical</option>
+                      <option value="Commercial Electrical">Commercial Electrical</option>
+                      <option value="Electrical Protection">Electrical Protection</option>
+                      <option value="Maintenance & Repairs">Maintenance & Repairs</option>
+                      <option value="Energy Efficiency">Energy Efficiency</option>
+                      <option value="Compliance & Safety">Compliance & Safety</option>
+                      <option value="EV Charging Solutions">EV Charging Solutions</option>
+                      <option value="Ventilation Systems">Ventilation Systems</option>
+                      <option value="Security Cameras">CSecurity Cameras</option>
                     </select>
                   </div>
                 </div>
