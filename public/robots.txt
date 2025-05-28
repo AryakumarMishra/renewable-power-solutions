@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.renewablepowersolutions.co.nz/sitemap.xml
