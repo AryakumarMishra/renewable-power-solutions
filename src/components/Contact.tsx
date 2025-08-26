@@ -76,8 +76,8 @@ const Contact = () => {
     try {
       // Use EmailJS to send the email
       const result = await emailjs.send(
-        'service_vu0x40t',   // EmailJS service ID
-        'template_jopymvl',  // EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  // EmailJS template ID
         {
           name: formData.name,
           email: formData.email,
@@ -85,7 +85,7 @@ const Contact = () => {
           service: formData.service,
           message: formData.message,
         },            // Form data
-        '2o_0Z3ZdnGH0odSvb'       //EmailJS user ID
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY       //EmailJS user ID
       );
 
       if (result.text === 'OK') {
