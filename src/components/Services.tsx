@@ -1,14 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import { Sun, Battery, Home, Lightbulb, Shield, LucideIcon, ArrowRight, Zap, Thermometer, Factory, CloudLightning, Wrench, Cpu, Fan, Camera } from 'lucide-react';
+import Image from 'next/image';
+
 
 interface ServiceCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
   delay?: number;
+  image?: string;
 }
 
-const ServiceCard = ({ icon: Icon, title, description, delay = 0 }: ServiceCardProps) => {
+const ServiceCard = ({ icon: Icon, title, description, delay = 0, image }: ServiceCardProps) => {
   return (
     <div 
       className="bg-black p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-800 animate-on-scroll relative overflow-hidden group"
@@ -16,6 +19,14 @@ const ServiceCard = ({ icon: Icon, title, description, delay = 0 }: ServiceCardP
     >
       <div className="absolute -right-12 -top-12 w-24 h-24 bg-gold/10 rounded-full transition-all duration-300 group-hover:scale-150"></div>
       <div className="relative z-10">
+        {image && (
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full aspect-video object-cover rounded-md mb-4"
+            loading="lazy"
+          />
+        )}
         <div className="p-3 bg-gold/10 rounded-lg inline-block mb-4">
           <Icon className="h-6 w-6 text-gold" />
         </div>
@@ -81,6 +92,8 @@ const Services = () => {
             icon={Sun} 
             title="Solar Energy Solutions" 
             description="Custom solar panel systems for residential and commercial properties, maximizing energy production and reducing carbon footprint. Includes installation, maintenance, and system design."
+            image="/images/solar-panel-1.jpg"
+
             delay={0}
           />
           <ServiceCard 
@@ -88,6 +101,7 @@ const Services = () => {
             title="Energy Storage Systems" 
             description="Advanced battery storage solutions that store excess solar energy for use during outages or peak pricing periods, providing energy independence and backup power."
             delay={100}
+            image='/images/energy-storage.jpg'
           />
           
           {/* Heat Pump Services */}
@@ -96,6 +110,7 @@ const Services = () => {
             title="Heat Pump Systems" 
             description="Energy-efficient heat pump installation and maintenance for heating and cooling, significantly reducing energy consumption while providing year-round comfort."
             delay={200}
+            image='/images/heat-pump.jpg'
           />
           
           {/* Electrical Services */}
@@ -104,18 +119,21 @@ const Services = () => {
             title="Residential Electrical" 
             description="Complete electrical services for homes including wiring, renovations, rewiring projects, and energy efficiency solutions with a focus on safety and reliability."
             delay={300}
+            image='/images/residential-electrical.jpg'
           />
           <ServiceCard 
             icon={Factory} 
             title="Commercial Electrical" 
             description="Comprehensive electrical solutions for businesses and industrial properties, including power systems, lighting, energy management, and safety compliance."
             delay={400}
+            image='/images/commercial-electrical.jpg'
           />
           <ServiceCard 
             icon={CloudLightning} 
             title="Electrical Protection" 
             description="Protection systems including surge protection, lightning arresters, and safety equipment to safeguard your property, appliances and electronics from electrical hazards."
             delay={500}
+            image='/images/electrical-protection.jpg'
           />
           
           {/* Maintenance & Support */}
@@ -124,18 +142,23 @@ const Services = () => {
             title="Maintenance & Repairs" 
             description="Regular maintenance, emergency repairs, and troubleshooting for all electrical systems and renewable energy installations, available 24/7 for your peace of mind."
             delay={600}
+            image='/images/maintenance-repairs.jpg'
           />
+
           <ServiceCard 
             icon={Lightbulb} 
             title="Energy Efficiency" 
             description="Comprehensive energy audits and solutions to optimize your energy usage, reduce utility bills, and improve the sustainability of your home or business."
             delay={700}
+            image='/images/energy-efficiency.jpg'
           />
+          
           <ServiceCard 
             icon={Shield} 
             title="Compliance & Safety" 
             description="Thorough electrical safety inspections, compliance checks, and certification for residential and commercial properties to ensure your systems meet all regulations."
             delay={800}
+            image='/images/electrical-compliance.jpg'
           />
           
           {/* New Services */}
@@ -144,18 +167,23 @@ const Services = () => {
             title="EV Charging Solutions" 
             description="Professional Electric Vehicle charging solutions for residential and commercial properties, providing comprehensive and accessible options to support sustainable transportation, making electric vehicle charging convenient and reliable."
             delay={600}
+            image='/images/ev-charging.jpg'
           />
+
           <ServiceCard 
             icon={Fan} 
             title="Ventilation Systems" 
             description="High-efficiency ventilation solutions that improve indoor air quality, reduce humidity, and create healthier living and working environments for your property."
             delay={700}
+            image='/images/ventilation.jpg'
           />
+
           <ServiceCard 
             icon={Camera} 
             title="Security Cameras" 
             description="State-of-the-art security camera systems with professional installation, monitoring options, and integration with your existing electrical infrastructure."
             delay={800}
+            image='/images/security-cameras.jpg'
           />
         </div>
         

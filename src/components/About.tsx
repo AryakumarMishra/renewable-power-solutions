@@ -84,7 +84,7 @@ const About = () => {
             
             <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1470&auto=format&fit=crop" 
+                src="/images/about.jpg" 
                 alt="Solar panel installation" 
                 className="w-full h-auto object-cover rounded-lg transition-transform duration-700 hover:scale-105"
               />
