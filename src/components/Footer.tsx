@@ -34,13 +34,10 @@ const Footer = () => {
               Providing premium renewable energy solutions to homes and businesses, helping you transition to a cleaner, more sustainable future.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">
+              <a href="https://www.facebook.com/share/177bkXxEgR/" target='_blank' className="text-gray-400 hover:text-gold transition-colors duration-300">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">
+              <a href="https://www.instagram.com/renewpow?igsh=OXg4eDBrczJoZ3c4" target='_blank' className="text-gray-400 hover:text-gold transition-colors duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-gold transition-colors duration-300">

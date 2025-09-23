@@ -2,9 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Mail, CheckCircle } from 'lucide-react';
 import { toast } from "@/components/ui/use-toast";
 import emailjs from 'emailjs-com';
+import Canonical from './canonical';
 
 const ContactInfo = () => {
   return (
+    <>
+    <Canonical />
     <div className="bg-black p-8 rounded-lg text-white">
       <h3 className="text-2xl font-bold mb-6 font-playfair">Contact Information</h3>
       
@@ -50,6 +53,8 @@ const ContactInfo = () => {
         </div>
       </div>
     </div>
+    </>
+    
   );
 };
 

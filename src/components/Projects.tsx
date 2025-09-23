@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Canonical from './canonical';
 
 interface Project {
   id: number;
@@ -105,6 +106,8 @@ const Projects = () => {
   }, []);
 
   return (
+    <>
+    <Canonical />
     <section id="projects" className="section py-24 bg-gray-50" ref={sectionRef}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
@@ -200,6 +203,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

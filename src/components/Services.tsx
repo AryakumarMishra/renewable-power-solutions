@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Sun, Battery, Home, Lightbulb, Shield, LucideIcon, ArrowRight, Zap, Thermometer, Factory, CloudLightning, Wrench, Cpu, Fan, Camera } from 'lucide-react';
 import Image from 'next/image';
+import Canonical from './canonical';
 
 
 interface ServiceCardProps {
@@ -13,6 +14,8 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ icon: Icon, title, description, delay = 0, image }: ServiceCardProps) => {
   return (
+    <>
+    <Canonical />
     <div 
       className="bg-black p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-800 animate-on-scroll relative overflow-hidden group"
       style={{ transitionDelay: `${delay}ms` }}
@@ -32,11 +35,13 @@ const ServiceCard = ({ icon: Icon, title, description, delay = 0, image }: Servi
         </div>
         <h3 className="text-xl font-bold font-playfair mb-3 text-white">{title}</h3>
         <p className="text-gray-400 mb-4">{description}</p>
-        <a href="#contact" className="inline-flex items-center text-gold group-hover:underline font-medium">
+        <a href="/contact" className="inline-flex items-center text-gold group-hover:underline font-medium">
           Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </a>
       </div>
     </div>
+    </>
+    
   );
 };
 

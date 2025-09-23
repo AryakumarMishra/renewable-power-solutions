@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { CheckCircle, Award, Users } from 'lucide-react';
+import Canonical from './canonical';
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -38,6 +39,8 @@ const About = () => {
   }, []);
 
   return (
+    <>
+    <Canonical />
     <section id="about" className="section py-24" ref={sectionRef}>
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -142,10 +145,9 @@ const About = () => {
             <p className="text-gray-400">Integrity, innovation, excellence, and sustainability guide every aspect of our operations and customer interactions.</p>
           </div>
         </div>
-
-
       </div>
     </section>
+    </>
   );
 };
 
